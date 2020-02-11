@@ -34,13 +34,11 @@ steps:
     majorVersion: '1'
     minorVersion: '0'
     patchVersion: '0'
- 
+
 - task: NuGetCommand@2
-  displayName: 'Publish NuGet package'
   inputs:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
     nuGetFeedType: 'internal'
-    publishVstsFeed: 'Space Game - web - Dependencies/Tailspin.SpaceGame.Web.Models'
-    allowPackageConflicts: true
+    publishVstsFeed: '63e67a80-458f-4770-8822-ce3fc9eb5308/ad2f5619-b08a-4cfa-b21e-136b321b5b22'
   condition: succeeded()
